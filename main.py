@@ -7,6 +7,8 @@ import dotenv
 
 import random
 
+from background import keep_alive #импорт функции для поддержки работоспособности
+
 from body_bot.media.stickers import stickers
 
 from body_bot.bot.init import *
@@ -89,6 +91,7 @@ dp.message.register(process_help_command, Command(commands='help'))
 dp.message.register(process_get_command, Command(commands='get'))
 
 if __name__ == '__main__':
+    keep_alive()
     dp.run_polling(bot)
 
 '''
